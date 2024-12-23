@@ -22,7 +22,7 @@ always @(posedge clk) begin
        {SrcAE, writedataE, ImmExtE, PCE, InstrE, ReadDataE, Result_srcE, Alu_controlE, alu_srcE, regwriteE, branchE, jalrE, jumpE} <= 0;
     end else if (!en) begin
 		 {SrcAE, writedataE, ImmExtE, PCE, InstrE, PCPlus4E, ReadDataE} 	 <= {SrcAD, writedataD, ImmExtD, PCD, InstrD, PCPlus4D, ReadDataD};
-       {alu_srcE, regwriteE, branchE, jalrE, jumpE} <= {alu_src, regwrite, branch, jalr, jump,};
+       {alu_srcE, regwriteE, branchE, jalrE, jumpE} <= {alu_src, regwrite, branch, jalr, jump};
 		  Result_srcE											 <= Result_src;
 		  Alu_controlE											 <= Alu_control;
     end
