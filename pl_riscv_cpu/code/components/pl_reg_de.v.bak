@@ -1,0 +1,27 @@
+
+// pipeline registers -> decode|execute stage
+
+module pl_reg_de (
+    input             clk, en, clr,
+    input      [31:0] SrcAD, writedataD, ImmExtD, PCD, InstrD, AuiPCD,
+    output reg [31:0] SrcAE, writedataE, ImmExtE, PCE, InstrE, AuiPCE
+);
+
+initial begin
+    {SrcAE, writedataE, ImmExtE, PCE, InstrE, AuiPCE} = 0;
+end
+
+always @(posedge clk) begin
+    if (clr) begin
+        {SrcAE, writedataE, ImmExtE, PCE, InstrE, AuiPCE} <= 0;
+    end else if (!en) begin
+        SrcAE <= SrcAD;
+		  writedataE <= writedataD;
+		  ImmExtE <= ImmExtD;
+		  PCE <= PCD;
+		  InstrE <= InstrD;
+		  AuiPCE <= AuiPCD;
+    end
+end
+
+endmodule

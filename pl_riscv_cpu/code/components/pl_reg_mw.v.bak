@@ -1,0 +1,23 @@
+
+// pipeline registers -> memory|writeback stage
+
+module pl_reg_mw (
+    input             clk, en, clr,
+	 input 		[31:0] ALUresultE, 
+	 output reg [31:0] ALUresultM
+    
+);
+
+initial begin
+    {ALUresultM} = 0;
+end
+
+always @(posedge clk) begin
+    if (clr) begin
+       {ALUresultM} <= 0;
+    end else if (!en) begin
+        ALUresultM <= ALUresultE;
+    end
+end
+
+endmodule
