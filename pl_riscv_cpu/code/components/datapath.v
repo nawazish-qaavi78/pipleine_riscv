@@ -23,11 +23,11 @@ wire [31:0] SrcA, WriteData;
 
 
 wire FlushD = 0; // remove it after adding hazard unit
-wire StallD = 1;
+wire StallD = 0;
 wire [31:0] PCD, PCPlus4D, ImmExtD;
 
 
-wire StallE = 1, FlushE = 0;
+wire StallE = 0, FlushE = 0;
 wire [31:0] SrcAE, WriteDataE, ImmExtE, PCE, InstrE, PCPlus4E, PCTargetE;
 wire [1:0]  ResultSrcE;
 wire [3:0]  ALUControlE;
@@ -36,13 +36,13 @@ wire [31:0] AuiPCE, lAuiPCE, SrcBE, ALUResultE;
 wire 			ZeroE, carryE, overflowE, TakeBranchE;
 wire 			PCSrcE;
 
-wire StallM = 1, FlushM = 0;
+wire StallM = 0, FlushM = 0;
 wire [31:0] ALUResultM, PCPlus4M, lAuiPCM, WriteDataM, PCM;
 wire [1:0]  ResultSrcM;
 wire RegWriteM;
 
 
-wire StallW = 1, FlushW = 0;
+wire StallW = 0, FlushW = 0;
 wire [31:0] ReadDataW, PCPlus4W, lAuiPCW, ResultW;
 wire [1:0]  ResultSrcW;
 wire 			RegWriteW;
@@ -73,8 +73,7 @@ pl_reg_de		plde (clk, StallE, FlushE,
 							SrcA, WriteData, ImmExtD, PCD, InstrD, PCPlus4D,
 							ResultSrc, MemWrite, ALUSrc, RegWrite, Branch, Jalr, Jump, ALUControl, 
 							SrcAE, WriteDataE, ImmExtE, PCE, InstrE, PCPlus4E,
-							ResultSrcE, ALUControlE, MemWriteE, ALUSrcE, RegWriteE, BranchE, JalrE, JumpE);
-							
+							ResultSrcE, ALUControlE, MemWriteE, ALUSrcE, RegWriteE, BranchE, JalrE, JumpE);							
 
 // ALU logic
 
