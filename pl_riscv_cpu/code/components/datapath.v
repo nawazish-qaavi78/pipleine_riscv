@@ -36,7 +36,7 @@ wire 			ZeroE, carryE, overflowE, TakeBranchE;
 wire 			PCSrcE;
 
 wire StallM = 1, FlushM = 0;
-wire [31:0] ALUResultM, PCPlus4M, lAuiPCM, WriteDataM;
+wire [31:0] ALUResultM, PCPlus4M, lAuiPCM, WriteDataM, PCM;
 wire [1:0]  ResultSrcM;
 wire RegWriteM;
 
@@ -87,14 +87,14 @@ branching_unit bu (InstrE[14:12], ZeroE, ALUResultE[31], carryE, overflowE, Take
 // Pipeline Register 3 -> Execute | Memory
 
 pl_reg_em		plem (clk, StallM, FlushM, 
-							ALUResultE, PCPlus4E, lAuiPCE, WriteDataE, ResultSrcE, RegWriteE, MemWriteE, InstrE[14:12],
-							ALUResultM, PCPlus4M, lAuiPCM, WriteDataM, ResultSrcM, RegWriteM, MemWriteM, funct3M);
+							ALUResultE, PCE, PCPlus4E, lAuiPCE, WriteDataE, ResultSrcE, RegWriteE, MemWriteE, InstrE[14:12],
+							ALUResultM, PCM, PCPlus4M, lAuiPCM, WriteDataM, ResultSrcM, RegWriteM, MemWriteM, funct3M);
 
 // Pipeline Register 4 -> Memory | Writeback
 
 pl_reg_mw 		plmw (clk, StallW, FlushW,
-							ALUResultM, ReadData, PCPlus4M, lAuiPCM, ResultSrcM, RegWriteM, 
-							ALUResultW, ReadDataW, PCPlus4W, lAuiPCW, ResultSrcW, RegWriteW);
+							ALUResultM, ReadData, PCM, PCPlus4M, lAuiPCM, ResultSrcM, RegWriteM, 
+							ALUResultW, ReadDataW, PCW, PCPlus4W, lAuiPCW, ResultSrcW, RegWriteW);
 
 // Result Source
 mux4 #(32)     resultmux(ALUResultW, ReadDataW, PCPlus4W, lAuiPCW, ResultSrcW, ResultW);
@@ -104,8 +104,5 @@ assign Result = ResultW;
 
 assign Mem_WrData = WriteDataM;
 assign Mem_WrAddr = ALUResultM;
-
-// eventually this statements will be removed while adding pipeline registers
-assign PCW = PC;
 
 endmodule
