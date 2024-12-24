@@ -24,11 +24,11 @@ wire [31:0] SrcA, WriteData;
 
 wire FlushD = 0; // remove it after adding hazard unit
 wire StallD = 1;
-wire [31:0] PCD, PCPlus4D;
+wire [31:0] PCD, PCPlus4D, ImmExtD;
 
 
 wire StallE = 1, FlushE = 0;
-wire [31:0] SrcAE, WriteDataE, ImmExtE, PCE, InstrE;
+wire [31:0] SrcAE, WriteDataE, ImmExtE, PCE, InstrE, PCPlus4E, PCTargetE;
 wire [1:0]  ResultSrcE;
 wire [3:0]  ALUControlE;
 wire		   MemWriteE, ALUSrcE, RegWriteE, BranchE, JalrE, JumpE;
@@ -43,7 +43,7 @@ wire RegWriteM;
 
 
 wire StallW = 1, FlushW = 0;
-wire [31:0] ReadDataW, PCPlus4W, lAuiPCW, ResultSrcW, RegWriteW;
+wire [31:0] ReadDataW, PCPlus4W, lAuiPCW, ResultSrcW, RegWriteW, ResultW;
 
 
 assign PCSrcE = ((BranchE & TakeBranchE) | JumpE | JalrE);

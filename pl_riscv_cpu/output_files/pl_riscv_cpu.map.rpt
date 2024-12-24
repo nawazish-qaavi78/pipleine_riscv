@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pl_riscv_cpu
-Tue Dec 24 18:50:08 2024
+Tue Dec 24 18:57:41 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -33,21 +33,18 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  25. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux"
  26. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw"
  27. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem"
- 28. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:pcaddbranch"
- 29. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|mux2:lauipcmux"
- 30. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:auipcadder"
- 31. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde"
- 32. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|imm_extend:ext"
- 33. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|reg_file:rf"
- 34. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd"
- 35. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:pcadd4"
- 36. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg"
- 37. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|mux2:pcmux"
- 38. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp"
- 39. Post-Synthesis Netlist Statistics for Top Partition
- 40. Elapsed Time Per Partition
- 41. Analysis & Synthesis Messages
- 42. Analysis & Synthesis Suppressed Messages
+ 28. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|mux2:lauipcmux"
+ 29. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:auipcadder"
+ 30. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde"
+ 31. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|reg_file:rf"
+ 32. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd"
+ 33. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:pcadd4"
+ 34. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg"
+ 35. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp"
+ 36. Post-Synthesis Netlist Statistics for Top Partition
+ 37. Elapsed Time Per Partition
+ 38. Analysis & Synthesis Messages
+ 39. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -74,7 +71,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec 24 18:50:08 2024       ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 24 18:57:41 2024       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; pl_riscv_cpu                                ;
 ; Top-level Entity Name              ; pl_riscv_cpu                                ;
@@ -268,164 +265,257 @@ https://fpgasoftware.intel.com/eula.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                     ;
-+-----------------------------------------------------------------+----------------------------------------------------------------------+
-; Register name                                                   ; Reason for Removal                                                   ;
-+-----------------------------------------------------------------+----------------------------------------------------------------------+
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[0..31]             ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|RegWriteW            ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|RegWriteM            ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ResultSrcM[0,1]      ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|lAuiPCM[0]           ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|PCPlus4M[0]          ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|PCM[0..31]           ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|PCPlus4E[0,1]        ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|jalrE                ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|branchE              ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|regwriteE            ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|alu_srcE             ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|MemWriteE            ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|Alu_controlE[0]      ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|Result_srcE[0,1]     ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[0]            ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|PCE[5,12..31]        ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|ImmExtE[0..31]       ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[0..31]    ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[0..31]         ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd|PCPlus4D[0,1]        ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd|PCD[5,12..31]        ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd|InstrD[0..11,15..24] ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[2]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[16]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[4]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[1]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[6]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[18]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[8]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[23]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[10]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[20]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[12]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[9]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[14]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[22]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[16]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[25]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[18]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[24]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[20,22]    ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[26]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[24]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[27]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[26]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[28]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[28]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[11]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[30]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[30]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[0]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[2,10,26]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[25]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[21]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[9,25]     ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[9]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[1]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[5]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[1]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[17]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[18]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|funct3M[1]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[17]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[13,29]    ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[30]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[5]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[14]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[13]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[5]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[21]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[6]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[29]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[13]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[1]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[22]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[9]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[21]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[17,25]    ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[29,31]    ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[12]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[3]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[0]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[7]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[4]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[11]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[3]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[15]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[16]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[19]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[7]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[23]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[0]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[27]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[11]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[31]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[20]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|MemWriteM            ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[15]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[3]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[8]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[7]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[19]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[11]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[24]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[15]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[23]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[19,23]    ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[27]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[27]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[28]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[31]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[29]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[0]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[3]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[2]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[31]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[4]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[13]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[6]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[0]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[8]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[0]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[10]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[2]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[12]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[15]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[14]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[4]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[16]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[5]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[18]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[6]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[20]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[17]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[22]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[8]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[24,26]    ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[10]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[28]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[19]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[30]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[12]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|funct3M[0]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[7]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|funct3M[2]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[14]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[0]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[21]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0]        ; Stuck at GND due to stuck port data_in                               ;
-; Total Number of Removed Registers = 380                         ;                                                                      ;
-+-----------------------------------------------------------------+----------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                      ;
++------------------------------------------------------------------+----------------------------------------------------------------------+
+; Register name                                                    ; Reason for Removal                                                   ;
++------------------------------------------------------------------+----------------------------------------------------------------------+
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[0..31]              ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|RegWriteW             ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|RegWriteM             ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ResultSrcM[0,1]       ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|lAuiPCM[0..31]        ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|PCPlus4M[0..31]       ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|PCM[0..31]            ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|PCPlus4E[0,1]         ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|jalrE                 ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|branchE               ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|regwriteE             ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|alu_srcE              ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|MemWriteE             ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|Alu_controlE[0]       ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|Result_srcE[0,1]      ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[0..31]         ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|PCE[5,12..31]         ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|ImmExtE[0..31]        ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[0..31]     ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[0..31]          ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd|PCPlus4D[0,1]         ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd|PCD[5,12..31]         ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd|InstrD[0..31]         ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[11]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[17]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[13]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[7]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[15]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[23]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[17]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[9]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[19]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[19]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[21]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[11]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[23]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[3]            ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[25]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[13]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[27]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[21]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[29]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[15]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[0,4,12,25,28] ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[28]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[28]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[18]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[10]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[22]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[10]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[26]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[14]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[30]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[22]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[17]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[23]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[19]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[11]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[21]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[25]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[23]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[27]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[25]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[27]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[27,29]      ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[29]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[31]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[29]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[1]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[31]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[3]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[13]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[5]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[1]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[7]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[31]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[9]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[3]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[11]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[5]            ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[13]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[5]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[15]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[1]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[17]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[7]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[19]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[15]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[21]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[9]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[23]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[3]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[25]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[11]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[27]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[1]            ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[29]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[13]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[31]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[5]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[1]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[15]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[3]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[17]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[5]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[17]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[7]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[7]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[9]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[19]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[11]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[7]            ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[13]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[21]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[15]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[9]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[17]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[23]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[19]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[19]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[21]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[25]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[23]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[11]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[25]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[27]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[27,29]     ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[29]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[31]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[13]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|funct3M[1]            ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[31]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|MemWriteM             ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[21]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[1]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[1]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[3]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[15]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[5]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[3]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[7]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[9]            ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[9]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[5]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[28]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[28]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[28]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[12]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[24]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[12]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[12]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[12]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[8]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[12]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[4]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[20]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[4]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[20]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[4]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[4]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[20]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[20]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[20]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[0]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[4]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[16]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[20]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[31]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[24]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[0]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[24]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[0]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[8]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[0]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[16]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[8]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[24]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[16]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[0]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[16]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[8]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[8]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[16]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[24]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[24]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[8]            ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|funct3M[0]            ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[0]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[4]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[16]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[12]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[8]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[20]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[24]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[28]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[16,18]      ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[26]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[22]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[26]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[26,30]      ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[30]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[2]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[30]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[6]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[2]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[10]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[14]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[14]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[6]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[18]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[2]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[22]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[10]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[26]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[6]            ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[30]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[14]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[2]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[6]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[6]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[18]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[10]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[18]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[14]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[22]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[18]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[10]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[22]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[26]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[26,30]     ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[30]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|funct3M[2]            ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[14]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[2]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[2]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[6]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[22]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[10]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[6]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[14]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[18]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]    ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[2]            ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0]         ; Stuck at GND due to stuck port data_in                               ;
+; Total Number of Removed Registers = 576                          ;                                                                      ;
++------------------------------------------------------------------+----------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------+
@@ -433,79 +523,110 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------+--------------------+------------------------------------------------------------+
 ; Register name                                    ; Reason for Removal ; Registers Removed due to This Register                     ;
 +--------------------------------------------------+--------------------+------------------------------------------------------------+
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[0]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[0],      ;
-;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|ImmExtE[28],    ;
-;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|ImmExtE[29],    ;
-;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|ImmExtE[30],    ;
-;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|ImmExtE[31],    ;
-;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[0],  ;
-;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[0]        ;
 ; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[31] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|jalrE,          ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|branchE,        ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|regwriteE,      ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|MemWriteE,      ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[31],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|ImmExtE[28],    ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|ImmExtE[29],    ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|ImmExtE[30],    ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|ImmExtE[31],    ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[31], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[31]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[30] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[30], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[30] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[30],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[30], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[30]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[29] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[29], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[29] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[29],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[29], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[29]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[28] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[28], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[28] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[28],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[28], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[28]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[27] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[27], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[27] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[27],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[27], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[27]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[26] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[26], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[26] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[26],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[26], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[26]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[25] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[25], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[25] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[25],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[25], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[25]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[24] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[24], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[24] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[24],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[24], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[24]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[23] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[23], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[23] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[23],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[23], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[23]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[22] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[22], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[22] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[22],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[22], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[22]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[21] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[21], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[21] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[21],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[21], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[21]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[20] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[20], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[20] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[20],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[20], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[20]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[19] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[19], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[19] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[19],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[19], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[19]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[18] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[18], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[18] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[18],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[18], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[18]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[17] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[17], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[17] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[17],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[17], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[17]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[16] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[16], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[16] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[16],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[16], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[16]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[15] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[15], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[15] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[15],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[15], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[15]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[14] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[14], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[14] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[14],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[14], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[14]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[13] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[13], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[13] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[13],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[13], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[13]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[12] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[12], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[12] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[12],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[12], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[12]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[11] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[11], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[11] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[11],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[11], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[11]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[10], ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[10] ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[10],     ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[10], ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[10]       ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[9]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[9],  ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[9]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[9],      ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[9],  ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[9]        ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[8]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[8],  ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[8]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[8],      ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[8],  ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[8]        ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[7]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[7],  ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[7]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[7],      ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[7],  ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[7]        ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[6]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[6],  ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[6]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[6],      ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[6],  ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[6]        ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[5]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[5],  ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[5]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[5],      ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[5],  ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[5]        ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[4]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[4],  ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[4]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[4],      ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[4],  ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[4]        ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[3]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[3],  ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[3]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[3],      ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[3],  ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[3]        ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[2]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[2],  ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[2]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[2],      ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[2],  ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[2]        ;
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[1]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[1],  ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[1]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[1],      ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[1],  ;
 ;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[1]        ;
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[0]  ; Lost Fanouts       ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[0],      ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[0],  ;
+;                                                  ;                    ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[0]        ;
 +--------------------------------------------------+--------------------+------------------------------------------------------------+
 
 
@@ -732,14 +853,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux"                                                                                                                                        ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                                                                            ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; sel  ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (2 bits) it drives.  The 30 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; y    ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (1 bits) it drives; bit(s) "y[31..1]" have no fanouts                                                             ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux"                                                                                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; sel  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (2 bits) it drives.  The 30 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -754,24 +874,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem"                                                                                                           ;
-+----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type  ; Severity ; Details                                                                                                                                            ;
-+----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; en       ; Input ; Info     ; Stuck at VCC                                                                                                                                       ;
-; clr      ; Input ; Info     ; Stuck at GND                                                                                                                                       ;
-; PCPlus4E ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "PCPlus4E[31..1]" will be connected to GND. ;
-+----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:pcaddbranch"                                                                           ;
-+------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                  ;
-+------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
-; sum  ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (1 bits) it drives; bit(s) "sum[31..1]" have no fanouts ;
-+------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                                 ;
+; clr  ; Input ; Info     ; Stuck at GND                                 ;
++------+-------+----------+----------------------------------------------+
 
 
 +------------------------------------------------------------------------+
@@ -799,14 +909,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; en           ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
 ; clr          ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; ImmExtD      ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "ImmExtD[31..1]" will be connected to GND.                                  ;
 ; ReadDataD    ; Input  ; Warning  ; Input port expression (2 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "ReadDataD[31..2]" will be connected to GND.                                ;
 ; Result_src   ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (2 bits) it drives.  Extra input bit(s) "Result_src[1..1]" will be connected to GND.                                 ;
 ; jump         ; Input  ; Warning  ; Input port expression (4 bits) is wider than the input port (1 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts.   ;
 ; Alu_control  ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
 ; PCE[11..6]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
 ; PCE[4..0]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-; InstrE       ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (1 bits) it drives; bit(s) "InstrE[31..1]" have no fanouts                                                        ;
 ; PCPlus4E     ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (2 bits) it drives; bit(s) "PCPlus4E[31..2]" have no fanouts                                                      ;
 ; Result_srcE  ; Output ; Warning  ; Output or bidir port (2 bits) is smaller than the port expression (4 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND.              ;
 ; Alu_controlE ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "Alu_controlE[3..1]" have no fanouts                                                    ;
@@ -814,23 +922,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|imm_extend:ext"                                                                                   ;
-+--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                                                                     ;
-+--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
-; immext ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (1 bits) it drives; bit(s) "immext[31..1]" have no fanouts ;
-+--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|reg_file:rf"                                                                                                                                             ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; wr_en   ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; wr_data ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "wr_data[31..1]" will be connected to GND.                                  ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|reg_file:rf"                                                                                                                                           ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; wr_en ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------+
@@ -861,16 +959,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+----------------------------------------------+
 ; clr  ; Input ; Info     ; Stuck at GND                                 ;
 +------+-------+----------+----------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|mux2:pcmux"                                                                                                     ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                      ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; d0   ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "d0[31..1]" will be connected to GND. ;
-; d1   ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "d1[31..1]" will be connected to GND. ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -919,7 +1007,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Dec 24 18:49:56 2024
+    Info: Processing started: Tue Dec 24 18:57:30 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pl_riscv_cpu -c pl_riscv_cpu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -965,11 +1053,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file code/co
     Info (12023): Found entity 1: pl_reg_em File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/pl_reg_em.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file code/components/pl_reg_mw.v
     Info (12023): Found entity 1: pl_reg_mw File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/pl_reg_mw.v Line: 4
-Warning (10236): Verilog HDL Implicit Net warning at riscv_cpu.v(22): created implicit net for "MemWriteD" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/riscv_cpu.v Line: 22
-Warning (10236): Verilog HDL Implicit Net warning at datapath.v(52): created implicit net for "PCPlus4E" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 52
-Warning (10236): Verilog HDL Implicit Net warning at datapath.v(52): created implicit net for "PCTargetE" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 52
-Warning (10236): Verilog HDL Implicit Net warning at datapath.v(65): created implicit net for "ResultW" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 65
-Warning (10236): Verilog HDL Implicit Net warning at datapath.v(66): created implicit net for "ImmExtD" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 66
 Info (12127): Elaborating entity "pl_riscv_cpu" for the top level hierarchy
 Info (12128): Elaborating entity "riscv_cpu" for hierarchy "riscv_cpu:rvcpu" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/pl_riscv_cpu.v Line: 22
 Info (12128): Elaborating entity "controller" for hierarchy "riscv_cpu:rvcpu|controller:c" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/riscv_cpu.v Line: 23
@@ -1091,7 +1174,7 @@ Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[3]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
     Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[2]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
     Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[1]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
-Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "PCW[0]" is stuck at GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/pl_riscv_cpu.v Line: 10
     Warning (13410): Pin "PCW[1]" is stuck at GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/pl_riscv_cpu.v Line: 10
@@ -1222,7 +1305,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "WriteDataW[30]" is stuck at GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/pl_riscv_cpu.v Line: 11
     Warning (13410): Pin "WriteDataW[31]" is stuck at GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/pl_riscv_cpu.v Line: 11
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 243 registers lost all their fanouts during netlist optimizations.
+Info (17049): 346 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/output_files/pl_riscv_cpu.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -1230,11 +1313,11 @@ Info (21057): Implemented 3864 device resources after synthesis - the final reso
     Info (21058): Implemented 67 input pins
     Info (21059): Implemented 225 output pins
     Info (21061): Implemented 3572 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 237 warnings
-    Info: Peak virtual memory: 4777 megabytes
-    Info: Processing ended: Tue Dec 24 18:50:08 2024
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:10
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 232 warnings
+    Info: Peak virtual memory: 4775 megabytes
+    Info: Processing ended: Tue Dec 24 18:57:41 2024
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:11
 
 
 +------------------------------------------+

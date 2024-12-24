@@ -13,7 +13,7 @@ module riscv_cpu (
     output [31:0] PCW, ALUResultW, WriteDataW
 );
 
-wire        ALUSrc, RegWrite, Branch, Jump, Jalr;
+wire        ALUSrc, RegWrite, Branch, Jump, Jalr, MemWriteD;
 wire [1:0]  ResultSrc, ImmSrc;
 wire [3:0]  ALUControl;
 wire [31:0] InstrD;
