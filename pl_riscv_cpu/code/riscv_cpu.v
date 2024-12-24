@@ -18,14 +18,12 @@ wire [1:0]  ResultSrc, ImmSrc;
 wire [3:0]  ALUControl;
 
 controller  c   (Instr[6:0], Instr[14:12], Instr[30],
-                ResultSrc, MemWrite, ALUSrc,
+                ResultSrc, MemWriteD, ALUSrc,
                 RegWrite, Branch, Jump, Jalr, ImmSrc, ALUControl);
 
-datapath    dp  (clk, reset, ResultSrc,
-                ALUSrc, RegWrite, ImmSrc, ALUControl, Branch, Jump, Jalr,
-                PC, Instr, Mem_WrAddr, Mem_WrData, ReadData, Result, PCW, ALUResultW, WriteDataW);
+datapath    dp  (clk, reset, ResultSrc, 
+                MemWriteD, ALUSrc, RegWrite, ImmSrc, ALUControl, Branch, Jump, Jalr,
+                PC, Instr, Mem_WrAddr, Mem_WrData, ReadData, Result, PCW, ALUResultW, WriteDataW, MemWrite, funct3);
 
-// Eventually will be removed while adding pipeline registers
-assign funct3 = Instr[14:12];
 
 endmodule
