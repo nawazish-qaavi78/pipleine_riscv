@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pl_riscv_cpu
-Tue Dec 24 19:22:56 2024
+Tue Dec 24 21:34:02 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -24,23 +24,23 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  16. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg
  17. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:pcadd4
  18. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|reg_file:rf
- 19. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:srcbmux
- 20. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|alu:alu
- 21. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:auipcadder
- 22. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:lauipcmux
- 23. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:pcaddbranch
- 24. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux4:resultmux
- 25. Parameter Settings for User Entity Instance: instr_mem:instrmem
- 26. Parameter Settings for User Entity Instance: data_mem:datamem
- 27. Parameter Settings for Inferred Entity Instance: riscv_cpu:rvcpu|datapath:dp|reg_file:rf|altsyncram:reg_file_arr_rtl_0
- 28. Parameter Settings for Inferred Entity Instance: riscv_cpu:rvcpu|datapath:dp|reg_file:rf|altsyncram:reg_file_arr_rtl_1
- 29. altsyncram Parameter Settings by Entity Instance
- 30. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw"
- 31. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem"
- 32. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|mux2:lauipcmux"
- 33. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:auipcadder"
- 34. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde"
- 35. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd"
+ 19. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux3:fdrs1
+ 20. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux3:fdrs2
+ 21. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:srcbmux
+ 22. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|alu:alu
+ 23. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:auipcadder
+ 24. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:lauipcmux
+ 25. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:pcaddbranch
+ 26. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux4:resultmux
+ 27. Parameter Settings for User Entity Instance: instr_mem:instrmem
+ 28. Parameter Settings for User Entity Instance: data_mem:datamem
+ 29. Parameter Settings for Inferred Entity Instance: riscv_cpu:rvcpu|datapath:dp|reg_file:rf|altsyncram:reg_file_arr_rtl_0
+ 30. Parameter Settings for Inferred Entity Instance: riscv_cpu:rvcpu|datapath:dp|reg_file:rf|altsyncram:reg_file_arr_rtl_1
+ 31. altsyncram Parameter Settings by Entity Instance
+ 32. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|hazard_unit:hu"
+ 33. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem"
+ 34. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|mux2:lauipcmux"
+ 35. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:auipcadder"
  36. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:pcadd4"
  37. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg"
  38. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp"
@@ -74,15 +74,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec 24 19:22:56 2024       ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 24 21:34:01 2024       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; pl_riscv_cpu                                ;
 ; Top-level Entity Name              ; pl_riscv_cpu                                ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 5,259                                       ;
-;     Total combinational functions  ; 2,867                                       ;
-;     Dedicated logic registers      ; 2,700                                       ;
-; Total registers                    ; 2700                                        ;
+; Total logic elements               ; 5,342                                       ;
+;     Total combinational functions  ; 2,940                                       ;
+;     Dedicated logic registers      ; 2,710                                       ;
+; Total registers                    ; 2710                                        ;
 ; Total pins                         ; 292                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 2,048                                       ;
@@ -210,6 +210,7 @@ https://fpgasoftware.intel.com/eula.
 ; code/components/reset_ff.v                     ; yes             ; User Verilog HDL File                                 ; C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/reset_ff.v                     ;         ;
 ; code/components/reg_file.v                     ; yes             ; User Verilog HDL File                                 ; C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/reg_file.v                     ;         ;
 ; code/components/mux4.v                         ; yes             ; User Verilog HDL File                                 ; C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/mux4.v                         ;         ;
+; code/components/mux3.v                         ; yes             ; User Verilog HDL File                                 ; C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/mux3.v                         ;         ;
 ; code/components/mux2.v                         ; yes             ; User Verilog HDL File                                 ; C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/mux2.v                         ;         ;
 ; code/components/main_decoder.v                 ; yes             ; User Verilog HDL File                                 ; C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/main_decoder.v                 ;         ;
 ; code/components/imm_extend.v                   ; yes             ; User Verilog HDL File                                 ; C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/imm_extend.v                   ;         ;
@@ -221,6 +222,7 @@ https://fpgasoftware.intel.com/eula.
 ; code/components/pl_reg_de.v                    ; yes             ; User Verilog HDL File                                 ; C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/pl_reg_de.v                    ;         ;
 ; code/components/pl_reg_em.v                    ; yes             ; User Verilog HDL File                                 ; C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/pl_reg_em.v                    ;         ;
 ; code/components/pl_reg_mw.v                    ; yes             ; User Verilog HDL File                                 ; C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/pl_reg_mw.v                    ;         ;
+; code/components/hazard_unit.v                  ; yes             ; User Verilog HDL File                                 ; C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/hazard_unit.v                  ;         ;
 ; code/rv32i_test.hex                            ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/rv32i_test.hex                            ;         ;
 ; altsyncram.tdf                                 ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                        ;         ;
 ; stratix_ram_block.inc                          ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                 ;         ;
@@ -241,20 +243,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 5,259     ;
+; Estimated Total logic elements              ; 5,342     ;
 ;                                             ;           ;
-; Total combinational functions               ; 2867      ;
+; Total combinational functions               ; 2940      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 2230      ;
-;     -- 3 input functions                    ; 566       ;
+;     -- 4 input functions                    ; 2306      ;
+;     -- 3 input functions                    ; 563       ;
 ;     -- <=2 input functions                  ; 71        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 2694      ;
+;     -- normal mode                          ; 2767      ;
 ;     -- arithmetic mode                      ; 173       ;
 ;                                             ;           ;
-; Total registers                             ; 2700      ;
-;     -- Dedicated logic registers            ; 2700      ;
+; Total registers                             ; 2710      ;
+;     -- Dedicated logic registers            ; 2710      ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 292       ;
@@ -263,9 +265,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 2764      ;
-; Total fan-out                               ; 19595     ;
-; Average fan-out                             ; 3.15      ;
+; Maximum fan-out                             ; 2774      ;
+; Total fan-out                               ; 19910     ;
+; Average fan-out                             ; 3.16      ;
 +---------------------------------------------+-----------+
 
 
@@ -274,25 +276,27 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                ; Entity Name     ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |pl_riscv_cpu                                   ; 2867 (67)           ; 2700 (0)                  ; 2048        ; 0            ; 0       ; 0         ; 292  ; 0            ; |pl_riscv_cpu                                                                                                      ; pl_riscv_cpu    ; work         ;
+; |pl_riscv_cpu                                   ; 2940 (67)           ; 2710 (0)                  ; 2048        ; 0            ; 0       ; 0         ; 292  ; 0            ; |pl_riscv_cpu                                                                                                      ; pl_riscv_cpu    ; work         ;
 ;    |data_mem:datamem|                           ; 1557 (1557)         ; 2048 (2048)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|data_mem:datamem                                                                                     ; data_mem        ; work         ;
 ;    |instr_mem:instrmem|                         ; 187 (187)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|instr_mem:instrmem                                                                                   ; instr_mem       ; work         ;
-;    |riscv_cpu:rvcpu|                            ; 1056 (0)            ; 652 (0)                   ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu                                                                                      ; riscv_cpu       ; work         ;
+;    |riscv_cpu:rvcpu|                            ; 1129 (0)            ; 662 (0)                   ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu                                                                                      ; riscv_cpu       ; work         ;
 ;       |controller:c|                            ; 26 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|controller:c                                                                         ; controller      ; work         ;
 ;          |alu_decoder:ad|                       ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|controller:c|alu_decoder:ad                                                          ; alu_decoder     ; work         ;
 ;          |main_decoder:md|                      ; 20 (20)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|controller:c|main_decoder:md                                                         ; main_decoder    ; work         ;
-;       |datapath:dp|                             ; 1030 (16)           ; 652 (0)                   ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp                                                                          ; datapath        ; work         ;
+;       |datapath:dp|                             ; 1103 (24)           ; 662 (0)                   ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp                                                                          ; datapath        ; work         ;
 ;          |adder:pcaddbranch|                    ; 97 (97)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|adder:pcaddbranch                                                        ; adder           ; work         ;
-;          |alu:alu|                              ; 677 (677)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu                                                                  ; alu             ; work         ;
+;          |alu:alu|                              ; 675 (675)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu                                                                  ; alu             ; work         ;
 ;          |imm_extend:ext|                       ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|imm_extend:ext                                                           ; imm_extend      ; work         ;
 ;          |mux2:lauipcmux|                       ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|mux2:lauipcmux                                                           ; mux2            ; work         ;
 ;          |mux2:srcbmux|                         ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|mux2:srcbmux                                                             ; mux2            ; work         ;
+;          |mux3:fdrs1|                           ; 65 (65)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|mux3:fdrs1                                                               ; mux3            ; work         ;
+;          |mux3:fdrs2|                           ; 66 (66)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|mux3:fdrs2                                                               ; mux3            ; work         ;
 ;          |mux4:resultmux|                       ; 64 (64)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|mux4:resultmux                                                           ; mux4            ; work         ;
-;          |pl_reg_de:plde|                       ; 0 (0)               ; 170 (170)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde                                                           ; pl_reg_de       ; work         ;
-;          |pl_reg_em:plem|                       ; 20 (20)             ; 165 (165)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem                                                           ; pl_reg_em       ; work         ;
+;          |pl_reg_de:plde|                       ; 2 (2)               ; 175 (175)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde                                                           ; pl_reg_de       ; work         ;
+;          |pl_reg_em:plem|                       ; 20 (20)             ; 170 (170)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem                                                           ; pl_reg_em       ; work         ;
 ;          |pl_reg_fd:plfd|                       ; 31 (31)             ; 90 (90)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd                                                           ; pl_reg_fd       ; work         ;
 ;          |pl_reg_mw:plmw|                       ; 0 (0)               ; 195 (195)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw                                                           ; pl_reg_mw       ; work         ;
-;          |reg_file:rf|                          ; 66 (66)             ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|reg_file:rf                                                              ; reg_file        ; work         ;
+;          |reg_file:rf|                          ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|reg_file:rf                                                              ; reg_file        ; work         ;
 ;             |altsyncram:reg_file_arr_rtl_0|     ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|reg_file:rf|altsyncram:reg_file_arr_rtl_0                                ; altsyncram      ; work         ;
 ;                |altsyncram_84i1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|reg_file:rf|altsyncram:reg_file_arr_rtl_0|altsyncram_84i1:auto_generated ; altsyncram_84i1 ; work         ;
 ;             |altsyncram:reg_file_arr_rtl_1|     ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|reg_file:rf|altsyncram:reg_file_arr_rtl_1                                ; altsyncram      ; work         ;
@@ -317,6 +321,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------+--------------------------------------------------------------------+
 ; Register name                                               ; Reason for Removal                                                 ;
 +-------------------------------------------------------------+--------------------------------------------------------------------+
+; riscv_cpu:rvcpu|datapath:dp|hazard_unit:hu|FlushW           ; Stuck at GND due to stuck port data_in                             ;
+; riscv_cpu:rvcpu|datapath:dp|hazard_unit:hu|StallW           ; Stuck at GND due to stuck port data_in                             ;
+; riscv_cpu:rvcpu|datapath:dp|hazard_unit:hu|FlushM           ; Stuck at GND due to stuck port data_in                             ;
+; riscv_cpu:rvcpu|datapath:dp|hazard_unit:hu|StallM           ; Stuck at GND due to stuck port data_in                             ;
+; riscv_cpu:rvcpu|datapath:dp|hazard_unit:hu|FlushE           ; Stuck at GND due to stuck port data_in                             ;
+; riscv_cpu:rvcpu|datapath:dp|hazard_unit:hu|StallE           ; Stuck at GND due to stuck port data_in                             ;
+; riscv_cpu:rvcpu|datapath:dp|hazard_unit:hu|StallD           ; Stuck at GND due to stuck port data_in                             ;
+; riscv_cpu:rvcpu|datapath:dp|hazard_unit:hu|FlushD           ; Stuck at GND due to stuck port data_in                             ;
 ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|ImmExtE[5]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[25]  ;
 ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|ImmExtE[6]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[26]  ;
 ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|ImmExtE[7]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[27]  ;
@@ -333,7 +345,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd|InstrD[0]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd|InstrD[1]   ;
 ; riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd|InstrD[27,29,31] ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd|InstrD[26]  ;
 ; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[27,29,31] ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[26]  ;
-; Total Number of Removed Registers = 31                      ;                                                                    ;
+; Total Number of Removed Registers = 39                      ;                                                                    ;
 +-------------------------------------------------------------+--------------------------------------------------------------------+
 
 
@@ -342,7 +354,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2700  ;
+; Total registers                              ; 2710  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 20    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -352,152 +364,154 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[7] ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[63][0]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[62][1]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[61][6]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[60][17]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[59][7]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[58][17]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[57][3]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[56][16]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[55][0]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[54][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[53][18]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[52][18]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[51][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[50][2]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[49][3]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[48][5]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[47][20]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[46][19]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[45][0]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[44][17]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[43][0]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[42][1]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[41][1]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[40][1]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[39][1]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[38][1]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[37][1]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[36][1]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[35][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[34][6]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[33][3]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[32][19]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[31][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[30][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[29][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[28][21]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[27][6]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[26][7]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[25][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[24][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[23][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[22][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[21][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[20][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[19][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[18][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[17][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[16][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[15][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[14][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[13][5]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[12][23]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[11][22]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[10][16]               ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[9][7]                 ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[8][16]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[7][18]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[6][5]                 ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[5][18]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[4][3]                 ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[3][21]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[2][23]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[1][19]                ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[0][5]                 ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[63][27]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[62][9]                ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[61][11]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[60][24]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[59][24]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[58][27]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[57][14]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[56][26]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[55][13]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[54][13]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[53][29]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[52][15]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[51][13]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[50][30]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[49][15]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[48][11]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[47][31]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[46][10]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[45][15]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[44][31]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[43][11]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[42][27]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[41][12]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[40][28]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[39][26]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[38][10]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[37][12]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[36][10]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[35][28]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[34][14]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[33][10]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[32][12]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[31][28]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[30][13]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[29][13]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[28][9]                ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[27][31]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[26][13]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[25][30]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[24][27]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[23][13]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[22][13]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[21][26]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[20][26]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[19][26]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[18][13]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[17][13]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[16][14]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[15][25]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[14][27]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[13][27]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[12][10]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[11][27]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[10][13]               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[9][26]                ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[8][11]                ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[7][8]                 ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[6][27]                ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[5][11]                ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[4][14]                ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[3][28]                ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[2][12]                ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[1][13]                ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[0][12]                ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[1] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pl_riscv_cpu|data_mem:datamem|Mux48                          ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |pl_riscv_cpu|data_mem:datamem|Mux2143                        ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |pl_riscv_cpu|data_mem:datamem|Mux2133                        ;
-; 64:1               ; 32 bits   ; 1344 LEs      ; 1344 LEs             ; 0 LEs                  ; No         ; |pl_riscv_cpu|data_mem:datamem|Mux5                           ;
-; 19:1               ; 8 bits    ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; No         ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux23       ;
-; 20:1               ; 7 bits    ; 91 LEs        ; 49 LEs               ; 42 LEs                 ; No         ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux8        ;
-; 20:1               ; 4 bits    ; 52 LEs        ; 24 LEs               ; 28 LEs                 ; No         ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux27       ;
-; 21:1               ; 4 bits    ; 56 LEs        ; 32 LEs               ; 24 LEs                 ; No         ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux7        ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; No         ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux28       ;
-; 22:1               ; 2 bits    ; 28 LEs        ; 18 LEs               ; 10 LEs                 ; No         ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux3        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[24]          ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[15] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[26]      ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[63][7]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[62][6]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[61][2]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[60][4]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[59][7]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[58][17]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[57][3]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[56][16]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[55][0]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[54][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[53][18]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[52][18]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[51][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[50][2]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[49][3]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[48][5]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[47][20]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[46][19]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[45][0]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[44][17]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[43][0]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[42][1]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[41][1]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[40][1]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[39][1]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[38][1]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[37][1]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[36][1]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[35][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[34][6]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[33][3]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[32][19]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[31][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[30][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[29][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[28][21]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[27][6]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[26][7]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[25][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[24][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[23][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[22][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[21][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[20][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[19][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[18][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[17][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[16][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[15][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[14][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[13][5]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[12][23]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[11][22]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[10][16]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[9][7]                           ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[8][16]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[7][18]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[6][5]                           ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[5][18]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[4][3]                           ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[3][21]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[2][23]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[1][19]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[0][5]                           ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[63][27]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[62][9]                          ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[61][11]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[60][24]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[59][24]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[58][27]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[57][14]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[56][26]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[55][13]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[54][13]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[53][29]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[52][15]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[51][13]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[50][30]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[49][15]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[48][11]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[47][31]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[46][10]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[45][15]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[44][31]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[43][11]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[42][27]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[41][12]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[40][28]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[39][26]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[38][10]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[37][12]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[36][10]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[35][28]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[34][14]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[33][10]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[32][12]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[31][28]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[30][13]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[29][13]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[28][9]                          ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[27][31]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[26][13]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[25][30]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[24][27]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[23][13]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[22][13]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[21][26]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[20][26]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[19][26]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[18][13]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[17][13]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[16][14]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[15][25]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[14][27]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[13][27]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[12][10]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[11][27]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[10][13]                         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[9][26]                          ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[8][11]                          ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[7][8]                           ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[6][27]                          ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[5][11]                          ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[4][14]                          ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[3][28]                          ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[2][12]                          ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[1][13]                          ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |pl_riscv_cpu|data_mem:datamem|data_ram[0][12]                          ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[1]           ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pl_riscv_cpu|data_mem:datamem|Mux48                                    ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |pl_riscv_cpu|data_mem:datamem|Mux2143                                  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |pl_riscv_cpu|data_mem:datamem|Mux2133                                  ;
+; 64:1               ; 32 bits   ; 1344 LEs      ; 1344 LEs             ; 0 LEs                  ; No         ; |pl_riscv_cpu|data_mem:datamem|Mux5                                     ;
+; 19:1               ; 8 bits    ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; No         ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux23                 ;
+; 20:1               ; 7 bits    ; 91 LEs        ; 49 LEs               ; 42 LEs                 ; No         ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux8                  ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 24 LEs               ; 28 LEs                 ; No         ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux27                 ;
+; 21:1               ; 4 bits    ; 56 LEs        ; 32 LEs               ; 24 LEs                 ; No         ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux7                  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; No         ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux28                 ;
+; 22:1               ; 2 bits    ; 28 LEs        ; 18 LEs               ; 10 LEs                 ; No         ; |pl_riscv_cpu|riscv_cpu:rvcpu|datapath:dp|alu:alu|Mux3                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -565,6 +579,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------------------------------+
 ; DATA_WIDTH     ; 32    ; Signed Integer                                              ;
 +----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux3:fdrs1 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux3:fdrs2 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -805,24 +839,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-----------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------+
-; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw" ;
-+------+-------+----------+----------------------------------------------+
-; Port ; Type  ; Severity ; Details                                      ;
-+------+-------+----------+----------------------------------------------+
-; en   ; Input ; Info     ; Stuck at GND                                 ;
-; clr  ; Input ; Info     ; Stuck at GND                                 ;
-+------+-------+----------+----------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|hazard_unit:hu"                                           ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; stallF ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------+
-; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem" ;
-+------+-------+----------+----------------------------------------------+
-; Port ; Type  ; Severity ; Details                                      ;
-+------+-------+----------+----------------------------------------------+
-; en   ; Input ; Info     ; Stuck at GND                                 ;
-; clr  ; Input ; Info     ; Stuck at GND                                 ;
-+------+-------+----------+----------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem"                                                   ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; InstrM[31..12] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; InstrM[6..0]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------+
@@ -841,28 +874,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+-------+----------+--------------------------------------------+
 ; a[11..0] ; Input ; Info     ; Stuck at GND                               ;
 +----------+-------+----------+--------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde"                                                  ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; en            ; Input  ; Info     ; Stuck at GND                                                                        ;
-; clr           ; Input  ; Info     ; Stuck at GND                                                                        ;
-; InstrE[11..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; InstrE[4..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------+
-; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd" ;
-+------+-------+----------+----------------------------------------------+
-; Port ; Type  ; Severity ; Details                                      ;
-+------+-------+----------+----------------------------------------------+
-; en   ; Input ; Info     ; Stuck at GND                                 ;
-; clr  ; Input ; Info     ; Stuck at GND                                 ;
-+------+-------+----------+----------------------------------------------+
 
 
 +----------------------------------------------------------------------+
@@ -902,23 +913,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 292                         ;
-; cycloneiii_ff         ; 2700                        ;
+; cycloneiii_ff         ; 2710                        ;
 ;     ENA               ; 2048                        ;
 ;     SLD               ; 20                          ;
-;     plain             ; 632                         ;
-; cycloneiii_lcell_comb ; 2867                        ;
+;     plain             ; 642                         ;
+; cycloneiii_lcell_comb ; 2940                        ;
 ;     arith             ; 173                         ;
 ;         2 data inputs ; 30                          ;
 ;         3 data inputs ; 143                         ;
-;     normal            ; 2694                        ;
+;     normal            ; 2767                        ;
 ;         1 data inputs ; 2                           ;
 ;         2 data inputs ; 39                          ;
-;         3 data inputs ; 423                         ;
-;         4 data inputs ; 2230                        ;
+;         3 data inputs ; 420                         ;
+;         4 data inputs ; 2306                        ;
 ; cycloneiii_ram_block  ; 64                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 20.00                       ;
-; Average LUT depth     ; 7.49                        ;
+; Max LUT depth         ; 19.00                       ;
+; Average LUT depth     ; 7.59                        ;
 +-----------------------+-----------------------------+
 
 
@@ -937,7 +948,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Dec 24 19:22:39 2024
+    Info: Processing started: Tue Dec 24 21:33:45 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pl_riscv_cpu -c pl_riscv_cpu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -983,24 +994,29 @@ Info (12021): Found 1 design units, including 1 entities, in source file code/co
     Info (12023): Found entity 1: pl_reg_em File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/pl_reg_em.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file code/components/pl_reg_mw.v
     Info (12023): Found entity 1: pl_reg_mw File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/pl_reg_mw.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/hazard_unit.v
+    Info (12023): Found entity 1: hazard_unit File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/hazard_unit.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at datapath.v(109): created implicit net for "stallF" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 109
 Info (12127): Elaborating entity "pl_riscv_cpu" for the top level hierarchy
 Info (12128): Elaborating entity "riscv_cpu" for hierarchy "riscv_cpu:rvcpu" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/pl_riscv_cpu.v Line: 22
 Info (12128): Elaborating entity "controller" for hierarchy "riscv_cpu:rvcpu|controller:c" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/riscv_cpu.v Line: 23
 Info (12128): Elaborating entity "main_decoder" for hierarchy "riscv_cpu:rvcpu|controller:c|main_decoder:md" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/controller.v Line: 19
 Info (12128): Elaborating entity "alu_decoder" for hierarchy "riscv_cpu:rvcpu|controller:c|alu_decoder:ad" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/controller.v Line: 21
 Info (12128): Elaborating entity "datapath" for hierarchy "riscv_cpu:rvcpu|datapath:dp" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/riscv_cpu.v Line: 27
-Info (12128): Elaborating entity "mux2" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux2:pcmux" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 54
-Info (12128): Elaborating entity "reset_ff" for hierarchy "riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 59
-Info (12128): Elaborating entity "adder" for hierarchy "riscv_cpu:rvcpu|datapath:dp|adder:pcadd4" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 60
-Info (12128): Elaborating entity "pl_reg_fd" for hierarchy "riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 64
-Info (12128): Elaborating entity "reg_file" for hierarchy "riscv_cpu:rvcpu|datapath:dp|reg_file:rf" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 67
-Info (12128): Elaborating entity "imm_extend" for hierarchy "riscv_cpu:rvcpu|datapath:dp|imm_extend:ext" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 68
-Info (12128): Elaborating entity "pl_reg_de" for hierarchy "riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 76
-Info (12128): Elaborating entity "alu" for hierarchy "riscv_cpu:rvcpu|datapath:dp|alu:alu" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 81
-Info (12128): Elaborating entity "branching_unit" for hierarchy "riscv_cpu:rvcpu|datapath:dp|branching_unit:bu" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 87
-Info (12128): Elaborating entity "pl_reg_em" for hierarchy "riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 93
-Info (12128): Elaborating entity "pl_reg_mw" for hierarchy "riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 99
-Info (12128): Elaborating entity "mux4" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 102
+Info (12128): Elaborating entity "mux2" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux2:pcmux" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 53
+Info (12128): Elaborating entity "reset_ff" for hierarchy "riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 58
+Info (12128): Elaborating entity "adder" for hierarchy "riscv_cpu:rvcpu|datapath:dp|adder:pcadd4" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 59
+Info (12128): Elaborating entity "pl_reg_fd" for hierarchy "riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 63
+Info (12128): Elaborating entity "reg_file" for hierarchy "riscv_cpu:rvcpu|datapath:dp|reg_file:rf" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 66
+Info (12128): Elaborating entity "imm_extend" for hierarchy "riscv_cpu:rvcpu|datapath:dp|imm_extend:ext" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 67
+Info (12128): Elaborating entity "mux3" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux3:fdrs1" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 69
+Info (12128): Elaborating entity "pl_reg_de" for hierarchy "riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 78
+Info (12128): Elaborating entity "alu" for hierarchy "riscv_cpu:rvcpu|datapath:dp|alu:alu" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 83
+Info (12128): Elaborating entity "branching_unit" for hierarchy "riscv_cpu:rvcpu|datapath:dp|branching_unit:bu" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 89
+Info (12128): Elaborating entity "pl_reg_em" for hierarchy "riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 95
+Info (12128): Elaborating entity "pl_reg_mw" for hierarchy "riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 101
+Info (12128): Elaborating entity "mux4" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 104
+Info (12128): Elaborating entity "hazard_unit" for hierarchy "riscv_cpu:rvcpu|datapath:dp|hazard_unit:hu" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 109
 Info (12128): Elaborating entity "instr_mem" for hierarchy "instr_mem:instrmem" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/pl_riscv_cpu.v Line: 23
 Warning (10850): Verilog HDL warning at instr_mem.v(13): number of words (79) in memory file does not match the number of elements in the address range [0:511] File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/instr_mem.v Line: 13
 Warning (10030): Net "instr_ram.data_a" at instr_mem.v(10) has no driver or initial value, using a default initial value '0' File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/instr_mem.v Line: 10
@@ -1068,14 +1084,14 @@ Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/output_files/pl_riscv_cpu.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 5722 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5805 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 67 input pins
     Info (21059): Implemented 225 output pins
-    Info (21061): Implemented 5366 logic cells
+    Info (21061): Implemented 5449 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4809 megabytes
-    Info: Processing ended: Tue Dec 24 19:22:56 2024
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4805 megabytes
+    Info: Processing ended: Tue Dec 24 21:34:02 2024
     Info: Elapsed time: 00:00:17
     Info: Total CPU time (on all processors): 00:00:16
 

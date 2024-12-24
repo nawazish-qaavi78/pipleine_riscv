@@ -1,0 +1,8 @@
+module hazard_unit (
+    input clk,
+    output reg stallF, FlushD, StallD, StallE, FlushE, StallM, FlushM, StallW, FlushW
+);
+    always @(posedge clk ) begin
+        {stallF, FlushD, StallD, StallE, FlushE, StallM, FlushM, StallW, FlushW} <= 0;
+    end
+endmodule

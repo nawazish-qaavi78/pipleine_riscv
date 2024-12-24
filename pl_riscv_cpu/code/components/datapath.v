@@ -22,12 +22,11 @@ wire [31:0] PCJalr, PCPlus4, PCNext;
 wire [31:0] SrcA, WriteData;
 
 
-wire FlushD = 0; // remove it after adding hazard unit
-wire StallD = 0;
-wire [31:0] PCD, PCPlus4D, ImmExtD;
+wire FlushD, StallD;
+wire [31:0] PCD, PCPlus4D, ImmExtD, SrcAD, WriteDataD;
 
 
-wire StallE = 0, FlushE = 0;
+wire StallE, FlushE;
 wire [31:0] SrcAE, WriteDataE, ImmExtE, PCE, InstrE, PCPlus4E, PCTargetE;
 wire [1:0]  ResultSrcE;
 wire [3:0]  ALUControlE;
@@ -36,13 +35,13 @@ wire [31:0] AuiPCE, lAuiPCE, SrcBE, ALUResultE;
 wire 			ZeroE, carryE, overflowE, TakeBranchE;
 wire 			PCSrcE;
 
-wire StallM = 0, FlushM = 0;
-wire [31:0] ALUResultM, PCPlus4M, lAuiPCM, WriteDataM, PCM;
+wire StallM, FlushM;
+wire [31:0] ALUResultM, PCPlus4M, lAuiPCM, WriteDataM, PCM, InstrM;
 wire [1:0]  ResultSrcM;
 wire RegWriteM;
 
 
-wire StallW = 0, FlushW = 0;
+wire StallW, FlushW;
 wire [31:0] ReadDataW, PCPlus4W, lAuiPCW, ResultW;
 wire [1:0]  ResultSrcW;
 wire 			RegWriteW;
@@ -67,10 +66,13 @@ pl_reg_fd 		plfd (clk, StallD, FlushD, Instr, PC, PCPlus4, InstrD, PCD, PCPlus4D
 reg_file       rf (clk, RegWriteW, InstrD[19:15], InstrD[24:20], InstrD[11:7], ResultW, SrcA, WriteData);
 imm_extend     ext (InstrD[31:7], ImmSrc, ImmExtD);
 
+mux3 #(32)     fdrs1 (SrcA, ALUResultE, ALUResultM, {(InstrD[19:15]==InstrM[11:7]), (InstrD[19:15]==InstrE[11:7])}, SrcAD); // forwarding (for raw)
+mux3 #(32)		fdrs2 (WriteData, ALUResultE, ALUResultM, {(InstrD[24:20]==InstrM[11:7]), (InstrD[24:20]==InstrE[11:7])}, WriteDataD);
+
 // Pipeline Register 2 -> Decode | Execute
 
 pl_reg_de		plde (clk, StallE, FlushE, 
-							SrcA, WriteData, ImmExtD, PCD, InstrD, PCPlus4D,
+							SrcAD, WriteDataD, ImmExtD, PCD, InstrD, PCPlus4D,
 							ResultSrc, MemWrite, ALUSrc, RegWrite, Branch, Jalr, Jump, ALUControl, 
 							SrcAE, WriteDataE, ImmExtE, PCE, InstrE, PCPlus4E,
 							ResultSrcE, ALUControlE, MemWriteE, ALUSrcE, RegWriteE, BranchE, JalrE, JumpE);							
@@ -89,8 +91,8 @@ branching_unit bu (InstrE[14:12], ZeroE, ALUResultE[31], carryE, overflowE, Take
 // Pipeline Register 3 -> Execute | Memory
 
 pl_reg_em		plem (clk, StallM, FlushM, 
-							ALUResultE, PCE, PCPlus4E, lAuiPCE, WriteDataE, ResultSrcE, RegWriteE, MemWriteE, InstrE[14:12],
-							ALUResultM, PCM, PCPlus4M, lAuiPCM, WriteDataM, ResultSrcM, RegWriteM, MemWriteM, funct3M);
+							ALUResultE, PCE, PCPlus4E, lAuiPCE, WriteDataE, ResultSrcE, RegWriteE, MemWriteE, InstrE,
+							ALUResultM, PCM, PCPlus4M, lAuiPCM, WriteDataM, ResultSrcM, RegWriteM, MemWriteM, funct3M, InstrM);
 
 // Pipeline Register 4 -> Memory | Writeback
 
@@ -102,7 +104,10 @@ pl_reg_mw 		plmw (clk, StallW, FlushW,
 mux4 #(32)     resultmux(ALUResultW, ReadDataW, PCPlus4W, lAuiPCW, ResultSrcW, ResultW);
 
 assign Result = ResultW;
+
 // hazard unit
+hazard_unit    hu (clk, stallF, FlushD, StallD, StallE, FlushE, StallM, FlushM, StallW, FlushW);
+
 
 assign Mem_WrData = WriteDataM;
 assign Mem_WrAddr = ALUResultM;
