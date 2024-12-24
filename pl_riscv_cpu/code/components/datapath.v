@@ -111,7 +111,7 @@ assign Result = ResultW;
 // hazard unit
 hazard_unit    hu (clk, 
 						InstrD[19:15], InstrD[24:20], InstrE[11:7], InstrM[11:7], InstrW[11:7],
-						RegWriteM, RegWriteW,
+						RegWriteM, RegWriteW, PCSrcE, JalrE,
 						ResultSrcE,
 						StallF, FlushD, StallD, StallE, FlushE, StallM, FlushM, StallW, FlushW, 
 						fd1, fd2);
