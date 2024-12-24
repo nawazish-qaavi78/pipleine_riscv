@@ -43,7 +43,9 @@ wire RegWriteM;
 
 
 wire StallW = 1, FlushW = 0;
-wire [31:0] ReadDataW, PCPlus4W, lAuiPCW, ResultSrcW, RegWriteW, ResultW;
+wire [31:0] ReadDataW, PCPlus4W, lAuiPCW, ResultW;
+wire [1:0]  ResultSrcW;
+wire 			RegWriteW;
 
 
 assign PCSrcE = ((BranchE & TakeBranchE) | JumpE | JalrE);
@@ -94,8 +96,8 @@ pl_reg_em		plem (clk, StallM, FlushM,
 // Pipeline Register 4 -> Memory | Writeback
 
 pl_reg_mw 		plmw (clk, StallW, FlushW,
-							ALUResultM, ReadData, PCM, PCPlus4M, lAuiPCM, ResultSrcM, RegWriteM, 
-							ALUResultW, ReadDataW, PCW, PCPlus4W, lAuiPCW, ResultSrcW, RegWriteW);
+							ALUResultM, ReadData, WriteDataM, PCM, PCPlus4M, lAuiPCM, ResultSrcM, RegWriteM, 
+							ALUResultW, ReadDataW, WriteDataW, PCW, PCPlus4W, lAuiPCW, ResultSrcW, RegWriteW);
 
 // Result Source
 mux4 #(32)     resultmux(ALUResultW, ReadDataW, PCPlus4W, lAuiPCW, ResultSrcW, ResultW);
