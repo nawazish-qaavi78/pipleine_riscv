@@ -14,7 +14,8 @@ module datapath (
     output [31:0] Result,
     output [31:0] PCW, ALUResultW, WriteDataW,
 	 output 			MemWriteM,
-	 output [2:0]  funct3M
+	 output [2:0]  funct3M,
+	 output [31:0] InstrD
 );
 
 wire [31:0] PCJalr, PCPlus4, PCNext;
@@ -23,7 +24,7 @@ wire [31:0] SrcA, WriteData;
 
 wire FlushD = 0; // remove it after adding hazard unit
 wire StallD = 1;
-wire [31:0] InstrD, PCD, PCPlus4D;
+wire [31:0] PCD, PCPlus4D;
 
 
 wire StallE = 1, FlushE = 0;

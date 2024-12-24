@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pl_riscv_cpu
-Tue Dec 24 15:18:47 2024
+Tue Dec 24 18:50:08 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -43,10 +43,11 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  35. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:pcadd4"
  36. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg"
  37. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|mux2:pcmux"
- 38. Post-Synthesis Netlist Statistics for Top Partition
- 39. Elapsed Time Per Partition
- 40. Analysis & Synthesis Messages
- 41. Analysis & Synthesis Suppressed Messages
+ 38. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp"
+ 39. Post-Synthesis Netlist Statistics for Top Partition
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
+ 42. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -73,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec 24 15:18:47 2024       ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 24 18:50:08 2024       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; pl_riscv_cpu                                ;
 ; Top-level Entity Name              ; pl_riscv_cpu                                ;
@@ -267,164 +268,164 @@ https://fpgasoftware.intel.com/eula.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                       ;
-+-------------------------------------------------------------------+----------------------------------------------------------------------+
-; Register name                                                     ; Reason for Removal                                                   ;
-+-------------------------------------------------------------------+----------------------------------------------------------------------+
-; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[0..31]               ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|RegWriteW              ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|RegWriteM              ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ResultSrcM[0,1]        ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|lAuiPCM[0]             ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|PCPlus4M[0]            ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|PCM[0..31]             ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|PCPlus4E[0,1]          ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|jalrE                  ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|branchE                ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|regwriteE              ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|alu_srcE               ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|MemWriteE              ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|Alu_controlE[0]        ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|Result_srcE[0,1]       ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[0]              ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|PCE[5,12..31]          ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|ImmExtE[0..31]         ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[0..31]      ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[0..31]           ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd|PCPlus4D[0,1]          ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd|PCD[5,12..31]          ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd|InstrD[0,7..11,15..24] ; Lost fanout                                                          ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[2]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[16]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[4]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[1]                 ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[6]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[18]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[8]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[23]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[10]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[20]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[12]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[9]                 ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[14]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[22]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[16]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[25]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[18]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[24]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[20,22]      ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[26]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[24]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[27]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[26]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[28]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[28]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[11]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[30]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[30]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[0]             ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[2,10,26]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[25]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[21]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[9,25]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[9]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[1]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[5]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[1]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[17]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[18]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|funct3M[1]             ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[17]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[13,29]      ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[30]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[5]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[14]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[13]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[5]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[21]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[6]                 ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[29]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[13]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[1]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[22]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[9]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[21]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[17,25]      ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[29,31]      ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[12]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[3]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[0]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[7]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[4]                 ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[11]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[3]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[15]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[16]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[19]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[7]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[23]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[0]                 ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[27]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[11]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[31]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[20]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|MemWriteM              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[15]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[3]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[8]                 ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[7]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[19]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[11]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[24]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[15]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[23]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[19,23]      ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[27]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[27]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[28]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[31]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[29]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[0]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[3]                 ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[2]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[31]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[4]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[13]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[6]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[0]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[8]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[0]            ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[10]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[2]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[12]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[15]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[14]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[4]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[16]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[5]                 ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[18]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[6]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[20]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[17]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[22]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[8]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[24,26]      ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[10]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[28]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[19]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[30]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[12]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|funct3M[0]             ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[7]                 ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|funct3M[2]             ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[14]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[0]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[21]                ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
-; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0]          ; Stuck at GND due to stuck port data_in                               ;
-; Total Number of Removed Registers = 374                           ;                                                                      ;
-+-------------------------------------------------------------------+----------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                     ;
++-----------------------------------------------------------------+----------------------------------------------------------------------+
+; Register name                                                   ; Reason for Removal                                                   ;
++-----------------------------------------------------------------+----------------------------------------------------------------------+
+; riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg|q[0..31]             ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|RegWriteW            ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|RegWriteM            ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ResultSrcM[0,1]      ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|lAuiPCM[0]           ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|PCPlus4M[0]          ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|PCM[0..31]           ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|PCPlus4E[0,1]        ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|jalrE                ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|branchE              ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|regwriteE            ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|alu_srcE             ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|MemWriteE            ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|Alu_controlE[0]      ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|Result_srcE[0,1]     ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|InstrE[0]            ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|PCE[5,12..31]        ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|ImmExtE[0..31]       ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|writedataE[0..31]    ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde|SrcAE[0..31]         ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd|PCPlus4D[0,1]        ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd|PCD[5,12..31]        ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd|InstrD[0..11,15..24] ; Lost fanout                                                          ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[2]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[16]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[4]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[1]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[6]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[18]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[8]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[23]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[10]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[20]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[12]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[9]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[14]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[22]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[16]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[25]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[18]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[24]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[20,22]    ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[26]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[24]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[27]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[26]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[28]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[28]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[11]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[30]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[30]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|lAuiPCW[0]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[2,10,26]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[25]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[21]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[9,25]     ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[9]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[1]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[5]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[1]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[17]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[18]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|funct3M[1]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[17]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[13,29]    ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[30]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[5]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[14]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[13]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[5]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[21]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[6]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[29]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[13]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[1]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[22]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[9]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[21]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[17,25]    ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[29,31]    ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[12]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[3]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ReadDataW[0]         ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[7]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[4]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[11]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[3]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[15]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[16]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[19]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[7]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[23]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[0]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[27]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[11]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[31]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[20]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|MemWriteM            ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[15]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[3]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[8]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[7]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[19]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[11]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[24]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[15]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[23]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[19,23]    ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[27]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[27]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[28]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[31]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[29]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[0]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[3]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[2]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[31]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[4]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[13]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[6]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[0]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[8]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCPlus4W[0]          ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[10]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[2]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[12]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[15]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[14]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[4]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[16]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[5]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[18]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[6]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[20]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[17]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[22]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[8]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[24,26]    ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[10]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[28]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[19]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|WriteDataM[30]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[12]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|funct3M[0]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[7]               ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|funct3M[2]           ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ALUResultW[14]       ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem|ALUResultM[0]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|PCW[21]              ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[1]        ; Merged with riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0] ;
+; riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw|ResultSrcW[0]        ; Stuck at GND due to stuck port data_in                               ;
+; Total Number of Removed Registers = 380                         ;                                                                      ;
++-----------------------------------------------------------------+----------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------+
@@ -872,6 +873,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp"                                                                  ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; InstrD[29..15] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; InstrD[11..7]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; InstrD[31]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
@@ -907,7 +919,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Dec 24 15:18:36 2024
+    Info: Processing started: Tue Dec 24 18:49:56 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pl_riscv_cpu -c pl_riscv_cpu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -953,30 +965,30 @@ Info (12021): Found 1 design units, including 1 entities, in source file code/co
     Info (12023): Found entity 1: pl_reg_em File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/pl_reg_em.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file code/components/pl_reg_mw.v
     Info (12023): Found entity 1: pl_reg_mw File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/pl_reg_mw.v Line: 4
-Warning (10236): Verilog HDL Implicit Net warning at riscv_cpu.v(21): created implicit net for "MemWriteD" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/riscv_cpu.v Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at datapath.v(51): created implicit net for "PCPlus4E" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 51
-Warning (10236): Verilog HDL Implicit Net warning at datapath.v(51): created implicit net for "PCTargetE" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 51
-Warning (10236): Verilog HDL Implicit Net warning at datapath.v(64): created implicit net for "ResultW" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 64
-Warning (10236): Verilog HDL Implicit Net warning at datapath.v(65): created implicit net for "ImmExtD" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 65
+Warning (10236): Verilog HDL Implicit Net warning at riscv_cpu.v(22): created implicit net for "MemWriteD" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/riscv_cpu.v Line: 22
+Warning (10236): Verilog HDL Implicit Net warning at datapath.v(52): created implicit net for "PCPlus4E" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 52
+Warning (10236): Verilog HDL Implicit Net warning at datapath.v(52): created implicit net for "PCTargetE" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 52
+Warning (10236): Verilog HDL Implicit Net warning at datapath.v(65): created implicit net for "ResultW" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 65
+Warning (10236): Verilog HDL Implicit Net warning at datapath.v(66): created implicit net for "ImmExtD" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 66
 Info (12127): Elaborating entity "pl_riscv_cpu" for the top level hierarchy
 Info (12128): Elaborating entity "riscv_cpu" for hierarchy "riscv_cpu:rvcpu" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/pl_riscv_cpu.v Line: 22
-Info (12128): Elaborating entity "controller" for hierarchy "riscv_cpu:rvcpu|controller:c" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/riscv_cpu.v Line: 22
+Info (12128): Elaborating entity "controller" for hierarchy "riscv_cpu:rvcpu|controller:c" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/riscv_cpu.v Line: 23
 Info (12128): Elaborating entity "main_decoder" for hierarchy "riscv_cpu:rvcpu|controller:c|main_decoder:md" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/controller.v Line: 19
 Info (12128): Elaborating entity "alu_decoder" for hierarchy "riscv_cpu:rvcpu|controller:c|alu_decoder:ad" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/controller.v Line: 21
-Info (12128): Elaborating entity "datapath" for hierarchy "riscv_cpu:rvcpu|datapath:dp" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/riscv_cpu.v Line: 26
+Info (12128): Elaborating entity "datapath" for hierarchy "riscv_cpu:rvcpu|datapath:dp" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/riscv_cpu.v Line: 27
 Warning (10034): Output port "WriteDataW" at datapath.v(15) has no driver File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 15
-Info (12128): Elaborating entity "mux2" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux2:pcmux" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 51
-Info (12128): Elaborating entity "reset_ff" for hierarchy "riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 56
-Info (12128): Elaborating entity "adder" for hierarchy "riscv_cpu:rvcpu|datapath:dp|adder:pcadd4" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 57
-Info (12128): Elaborating entity "pl_reg_fd" for hierarchy "riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 61
-Info (12128): Elaborating entity "reg_file" for hierarchy "riscv_cpu:rvcpu|datapath:dp|reg_file:rf" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 64
-Info (12128): Elaborating entity "imm_extend" for hierarchy "riscv_cpu:rvcpu|datapath:dp|imm_extend:ext" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 65
-Info (12128): Elaborating entity "pl_reg_de" for hierarchy "riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 73
-Info (12128): Elaborating entity "alu" for hierarchy "riscv_cpu:rvcpu|datapath:dp|alu:alu" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 79
-Info (12128): Elaborating entity "branching_unit" for hierarchy "riscv_cpu:rvcpu|datapath:dp|branching_unit:bu" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 85
-Info (12128): Elaborating entity "pl_reg_em" for hierarchy "riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 91
-Info (12128): Elaborating entity "pl_reg_mw" for hierarchy "riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 97
-Info (12128): Elaborating entity "mux4" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 100
+Info (12128): Elaborating entity "mux2" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux2:pcmux" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 52
+Info (12128): Elaborating entity "reset_ff" for hierarchy "riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 57
+Info (12128): Elaborating entity "adder" for hierarchy "riscv_cpu:rvcpu|datapath:dp|adder:pcadd4" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 58
+Info (12128): Elaborating entity "pl_reg_fd" for hierarchy "riscv_cpu:rvcpu|datapath:dp|pl_reg_fd:plfd" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 62
+Info (12128): Elaborating entity "reg_file" for hierarchy "riscv_cpu:rvcpu|datapath:dp|reg_file:rf" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 65
+Info (12128): Elaborating entity "imm_extend" for hierarchy "riscv_cpu:rvcpu|datapath:dp|imm_extend:ext" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 66
+Info (12128): Elaborating entity "pl_reg_de" for hierarchy "riscv_cpu:rvcpu|datapath:dp|pl_reg_de:plde" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 74
+Info (12128): Elaborating entity "alu" for hierarchy "riscv_cpu:rvcpu|datapath:dp|alu:alu" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 80
+Info (12128): Elaborating entity "branching_unit" for hierarchy "riscv_cpu:rvcpu|datapath:dp|branching_unit:bu" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 86
+Info (12128): Elaborating entity "pl_reg_em" for hierarchy "riscv_cpu:rvcpu|datapath:dp|pl_reg_em:plem" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 92
+Info (12128): Elaborating entity "pl_reg_mw" for hierarchy "riscv_cpu:rvcpu|datapath:dp|pl_reg_mw:plmw" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 98
+Info (12128): Elaborating entity "mux4" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 101
 Info (12128): Elaborating entity "instr_mem" for hierarchy "instr_mem:instrmem" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/pl_riscv_cpu.v Line: 23
 Warning (10850): Verilog HDL warning at instr_mem.v(13): number of words (79) in memory file does not match the number of elements in the address range [0:511] File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/instr_mem.v Line: 13
 Warning (10030): Net "instr_ram.data_a" at instr_mem.v(10) has no driver or initial value, using a default initial value '0' File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/instr_mem.v Line: 10
@@ -984,101 +996,101 @@ Warning (10030): Net "instr_ram.waddr_a" at instr_mem.v(10) has no driver or ini
 Warning (10030): Net "instr_ram.we_a" at instr_mem.v(10) has no driver or initial value, using a default initial value '0' File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/instr_mem.v Line: 10
 Info (12128): Elaborating entity "data_mem" for hierarchy "data_mem:datamem" File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/pl_riscv_cpu.v Line: 24
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[31]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[30]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[29]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[28]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[27]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[26]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[25]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[24]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[23]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[22]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[21]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[20]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[19]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[18]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[17]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[16]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[15]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[14]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[13]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[12]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[11]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[10]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[9]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[8]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[7]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[6]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[5]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[4]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[3]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[2]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[1]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[0]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 30
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ALUControlE[3]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 32
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ALUControlE[2]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 32
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[31]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[30]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[29]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[28]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[27]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[26]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[25]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[24]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[23]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[22]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[21]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[20]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[19]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[18]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[17]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[16]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[15]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[14]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[13]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[12]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[11]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[10]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[9]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[8]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[7]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[6]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[5]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[4]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[3]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[2]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[31]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[30]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[29]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[28]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[27]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[26]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[25]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[24]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[23]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[22]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[21]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[20]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[19]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[18]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[17]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[16]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[15]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[14]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[13]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[12]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[11]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[10]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[9]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[8]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[7]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[6]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[5]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[4]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[3]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[2]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
-    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[1]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 45
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[31]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[30]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[29]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[28]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[27]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[26]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[25]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[24]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[23]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[22]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[21]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[20]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[19]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[18]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[17]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[16]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[15]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[14]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[13]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[12]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[11]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[10]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[9]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[8]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[7]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[6]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[5]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[4]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[3]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[2]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[1]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|SrcAE[0]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 31
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ALUControlE[3]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 33
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ALUControlE[2]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 33
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[31]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[30]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[29]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[28]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[27]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[26]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[25]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[24]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[23]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[22]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[21]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[20]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[19]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[18]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[17]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[16]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[15]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[14]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[13]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[12]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[11]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[10]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[9]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[8]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[7]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[6]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[5]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[4]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[3]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|ResultSrcW[2]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[31]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[30]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[29]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[28]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[27]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[26]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[25]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[24]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[23]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[22]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[21]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[20]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[19]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[18]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[17]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[16]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[15]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[14]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[13]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[12]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[11]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[10]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[9]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[8]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[7]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[6]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[5]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[4]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[3]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[2]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
+    Warning (12110): Net "riscv_cpu:rvcpu|datapath:dp|RegWriteW[1]" is missing source, defaulting to GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/components/datapath.v Line: 46
 Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "PCW[0]" is stuck at GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/pl_riscv_cpu.v Line: 10
@@ -1210,7 +1222,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "WriteDataW[30]" is stuck at GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/pl_riscv_cpu.v Line: 11
     Warning (13410): Pin "WriteDataW[31]" is stuck at GND File: C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/code/pl_riscv_cpu.v Line: 11
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 237 registers lost all their fanouts during netlist optimizations.
+Info (17049): 243 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/nawaz/OneDrive/Desktop/programing/verilog/eyantra task 3/pipleine_riscv/pl_riscv_cpu/output_files/pl_riscv_cpu.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -1219,10 +1231,10 @@ Info (21057): Implemented 3864 device resources after synthesis - the final reso
     Info (21059): Implemented 225 output pins
     Info (21061): Implemented 3572 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 237 warnings
-    Info: Peak virtual memory: 4770 megabytes
-    Info: Processing ended: Tue Dec 24 15:18:47 2024
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:11
+    Info: Peak virtual memory: 4777 megabytes
+    Info: Processing ended: Tue Dec 24 18:50:08 2024
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:10
 
 
 +------------------------------------------+
