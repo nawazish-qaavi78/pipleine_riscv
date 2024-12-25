@@ -52,7 +52,7 @@ wire 			RegWriteW;
 assign PCSrcE = ((BranchE & TakeBranchE) | JumpE | JalrE);
 
 // next PC logic
-mux2 #(32)     pcmux(PCPlus4E, PCTargetE, PCSrcE, PCNext);
+mux2 #(32)     pcmux(PCPlus4, PCTargetE, PCSrcE, PCNext);
 mux2 #(32)     jalrmux (PCNext, ALUResultE, JalrE, PCJalr);
 
 // stallF - should be wired from hazard unit
@@ -119,5 +119,7 @@ hazard_unit    hu (clk,
 
 assign Mem_WrData = WriteDataM;
 assign Mem_WrAddr = ALUResultM;
+
+//always@(posedge clk) $display("PCSrcE = %b, JalrE = %b, PCJalr = %b, Instr = %h, SrcA_eff = %d, fd1 = %b, ALUResultM = %d, ResultW = %d", PCSrcE, JalrE, PCJalr, Instr, SrcA_eff, fd1, ALUResultM, ResultW);
 
 endmodule
