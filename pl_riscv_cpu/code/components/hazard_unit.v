@@ -1,16 +1,17 @@
 module hazard_unit (
     input 				 clk, 
-	 input 		[4:0]  rs1D, rs2D, rdE, rdM, rdW,
+	 input 		[4:0]  rs1D, rs2D, rs1E, rs2E, rdE, rdM, rdW,
 	 input 				 RegWriteM, RegWriteW, PCSrcE, JalrE,
 	 input 		[1:0]  ResultSrcE,
     output reg 		 StallF, FlushD, StallD, StallE, FlushE, StallM, FlushM, StallW, FlushW,
-	 output reg [1:0]  fd1, fd2
+	 output 	   [1:0]  fd1, fd2
 );
-    always @(posedge clk) begin
+
+	 assign fd1 = {(rs1E==rdM & RegWriteM), (rs1E==rdW & RegWriteW)};
+	 assign fd2 = {(rs2E==rdM & RegWriteM), (rs2E==rdW & RegWriteW)};
+	 
+    always @(*) begin
         {StallF, FlushD, StallD, StallE, FlushE, StallM, FlushM, StallW, FlushW} = 0;
-		  
-		  fd1 = {(rs1D==rdM & RegWriteM), (rs1D==rdW & RegWriteW)};
-		  fd2 = {(rs2D==rdM & RegWriteM), (rs2D==rdW & RegWriteW)};
 		  
 		  if(JalrE | PCSrcE) begin
 				FlushD = 1;
@@ -19,9 +20,8 @@ module hazard_unit (
 				StallF = 1;
 				StallD = 1;
 				FlushE = 1;
-		  end
-		  
-		  
-		  
+		  end 
     end
+	 
+	 
 endmodule

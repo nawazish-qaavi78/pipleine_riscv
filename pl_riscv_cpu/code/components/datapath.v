@@ -110,7 +110,7 @@ assign Result = ResultW;
 
 // hazard unit
 hazard_unit    hu (clk, 
-						InstrD[19:15], InstrD[24:20], InstrE[11:7], InstrM[11:7], InstrW[11:7],
+						InstrD[19:15], InstrD[24:20], InstrE[19:15], InstrE[24:20], InstrE[11:7], InstrM[11:7], InstrW[11:7],
 						RegWriteM, RegWriteW, PCSrcE, JalrE,
 						ResultSrcE,
 						StallF, FlushD, StallD, StallE, FlushE, StallM, FlushM, StallW, FlushW, 
@@ -120,6 +120,7 @@ hazard_unit    hu (clk,
 assign Mem_WrData = WriteDataM;
 assign Mem_WrAddr = ALUResultM;
 
-//always@(posedge clk) $display("PCSrcE = %b, JalrE = %b, PCJalr = %b, Instr = %h, SrcA_eff = %d, fd1 = %b, ALUResultM = %d, ResultW = %d", PCSrcE, JalrE, PCJalr, Instr, SrcA_eff, fd1, ALUResultM, ResultW);
-
+//initial $monitor("PCSrcE = %b, rd = %d, JalrE = %b, PCJalr = %b, Instr = %h, SrcA_eff = %d, fd1 = %b, ALUResult = %d, ALUResultM = %d, ResultW = %d", PCSrcE, InstrD[11:7], JalrE, PCJalr, Instr, SrcA_eff, fd1, ALUResultE, ALUResultM, ResultW);
+//initial $monitor("PCJalr = %b, Instr = %h, SrcA_eff = %d, fd1 = %b, ALUResult = %d, ALUResultM = %d, RegWriteM = %b, ResultW = %d, RegWriteW = %b", PCJalr, Instr, SrcA_eff, fd1, ALUResultE, ALUResultM, RegWriteM, ResultW, RegWriteW);
+//initial $monitor("PCJalr = %b, rd = %d ,rs1 = %d, rs2 = %d, rdE =%d, rdM = %d, rdW = %d, ALUResult = %d, ALUResultM = %d, ResultW = %d", PCJalr, InstrD[11:7], InstrD[19:15], InstrD[24:20], InstrE[11:7], InstrM[11:7], InstrW[11:7], ALUResultE, ALUResultM, ResultW);
 endmodule
